@@ -7,7 +7,7 @@ RSpec.describe 'Items API' do
     let(:id) { items.first.id }
 
     describe 'GET /api/v1/merchants/:merchant_id/items' do
-        before { get "/merchants/#{merchant_id}/items" }
+        before { get "/api/v1/merchants/#{merchant_id}/items" }
 
         context "when merchant exists" do
             it 'returns status code 200' do
