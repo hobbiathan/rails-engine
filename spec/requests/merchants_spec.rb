@@ -9,7 +9,7 @@ RSpec.describe "Merchants", type: :request do
 
     it 'returns merchants' do
       expect(json).to_not be_empty
-      expect(json.size).to eq(5)
+      expect(json["data"].size).to eq(5)
     end 
   end
 end
