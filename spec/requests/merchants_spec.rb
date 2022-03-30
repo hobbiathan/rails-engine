@@ -18,7 +18,7 @@ RSpec.describe "Merchants", type: :request do
   end
 
   describe 'GET /api/v1/merchants/merchant_id' do
-    before { get "/api/v1/#{merchant_id}" }
+    before { get "/api/v1/merchants/#{merchant_id}" }
 
     context 'when the record exists' do
       it 'returns the merchant' do
@@ -43,5 +43,5 @@ RSpec.describe "Merchants", type: :request do
       end 
     end 
   end 
-  
+
 end
