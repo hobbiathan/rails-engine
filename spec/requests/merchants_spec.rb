@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Merchants", type: :request do
   let!(:merchants) { create_list(:merchant, 5) }
-  let(:merchant_id) { :merchants.first.id }
+  let(:merchant_id) { merchants.first.id }
 
   describe "GET /api/v1/merchants" do
     before { get '/api/v1/merchants' }
@@ -23,7 +23,7 @@ RSpec.describe "Merchants", type: :request do
     context 'when the record exists' do
       it 'returns the merchant' do
         expect(json["data"]).not_to be_empty
-        expect(json["data"]["id"]).to eq(merchant_id)
+        expect(json["data"]["id"].to_i).to eq(merchant_id)
       end 
 
       it 'returns status code 200' do

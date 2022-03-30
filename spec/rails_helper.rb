@@ -2,6 +2,7 @@
 require 'spec_helper'
 require 'simplecov'
 require 'database_cleaner'
+SimpleCov.start
 
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
