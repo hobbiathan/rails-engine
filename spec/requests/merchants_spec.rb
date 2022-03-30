@@ -17,7 +17,7 @@ RSpec.describe "Merchants", type: :request do
     end
   end
 
-  describe 'GET /api/v1/merchants/merchant_id' do
+  describe 'GET /api/v1/merchants/:merchant_id' do
     before { get "/api/v1/merchants/#{merchant_id}" }
 
     context 'when the record exists' do
