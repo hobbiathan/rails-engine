@@ -11,5 +11,9 @@ RSpec.describe "Merchants", type: :request do
       expect(json).to_not be_empty
       expect(json["data"].size).to eq(5)
     end 
+
+    it 'returns status code 200' do
+      expect(response).to have_http_status(200)
+    end
   end
 end
