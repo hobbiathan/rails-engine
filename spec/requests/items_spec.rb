@@ -19,15 +19,15 @@ RSpec.describe 'Items API' do
             end 
         end 
 
-        context 'when item does not exist' do
-            let (:id) { 11 }
+        context 'when items do not exist' do
+            let (:items) { create_list(:item, 0, merchant_id: merchant.id) }
 
-            it 'returns status code 404' do
-                expect(response).to have_http_status(404)
+            it 'returns status code 200' do
+                expect(response).to have_http_status(200)
             end 
 
-            it 'returns a not found message' do
-                expect(response.body).to match(/Couldn't find Item/)
+            it 'returns an empty data array ' do
+                expect(response.body).to match("{\"data\":[]}")
             end 
         end 
     end 
