@@ -12,6 +12,11 @@ class Api::V1::ItemsController < ApplicationController
         render json: ItemSerializer.new(merchant.items.create!(item_params)), status: :created
     end
 
+    def destroy
+        Item.find(params[:id]).destroy
+        head :no_content
+    end
+
     private
 
     def item_params
