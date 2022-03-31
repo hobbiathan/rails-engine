@@ -43,11 +43,13 @@ RSpec.describe 'Items API' do
             it 'returns the item' do
                 expect(json["data"]).not_to be_empty
                 expect(json["data"]["id"].to_i).to eq(id)
-                expect(json["data"]["merchant_id"].to_i).to eq(merchant_id)
+                expect(json["data"]["attributes"]["merchant_id"].to_i).to eq(merchant_id)
             end 
         end
 
         context 'when the item does not exist' do
+            let(:id) { 0 }
+
             it 'returns status code 404' do
                 expect(response).to have_http_status(404)
             end
