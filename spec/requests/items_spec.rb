@@ -82,5 +82,13 @@ RSpec.describe 'Items API' do
             expect(response.body).to match(/Validation failed: Name can't be blank/)
           end
         end
-      end    
+    end
+    
+    describe 'DELETE /todos/:id' do
+        before { delete "/api/v1/items/#{id}" }
+    
+        it 'returns status code 204' do
+          expect(response).to have_http_status(204)
+        end
+    end
 end 
