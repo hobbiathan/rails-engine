@@ -31,4 +31,30 @@ RSpec.describe 'Items API' do
             end 
         end 
     end 
+
+    describe 'GET /api/v1/items/:item_id' do
+        before { get "/api/v1/items/#{id}" }
+
+        context 'when the item exists' do
+            it 'returns status code 200' do
+                expect(response).to have_http_status(200)
+            end
+
+            it 'returns the item' do
+                expect(json["data"]).not_to be_empty
+                expect(json["data"]["id"].to_i).to eq(id)
+                expect(json["data"]["merchant_id"].to_i).to eq(merchant_id)
+            end 
+        end
+
+        context 'when the item does not exist' do
+            it 'returns status code 404' do
+                expect(response).to have_http_status(404)
+            end
+
+            it 'returns a not found message' do
+                expect(response.body).to match(/Couldn't find Item/)
+            end 
+        end 
+    end 
 end 
