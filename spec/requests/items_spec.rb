@@ -84,14 +84,14 @@ RSpec.describe 'Items API' do
         end
     end
 
-    describe 'PUT /todos/:todo_id/items/:id' do
+    describe 'PUT /api/v1/items/:item_id' do
         let(:valid_attributes) { { name: 'Hubert Rug' } }
     
         before { put "/api/v1/items/#{id}", params: valid_attributes }
     
         context 'when item exists' do
-          it 'returns status code 204' do
-            expect(response).to have_http_status(204)
+          it 'returns status code 200' do
+            expect(response).to have_http_status(200)
           end
     
           it 'updates the item' do
@@ -113,7 +113,7 @@ RSpec.describe 'Items API' do
         end
     end
     
-    describe 'DELETE /todos/:id' do
+    describe 'DELETE /api/v1/items/:item_id' do
         before { delete "/api/v1/items/#{id}" }
     
         it 'returns status code 204' do
@@ -131,5 +131,13 @@ RSpec.describe 'Items API' do
               expect(response.body).to match(/Couldn't find Item/)
             end
           end
+    end
+
+    describe 'GET /api/v1/items/:item_id/merchant' do
+        before { get "/api/v1/items/#{id}/merchant" }
+
+        it 'returns status code 204' do
+          expect(response).to have_http_status(200)
+        end
     end
 end 
