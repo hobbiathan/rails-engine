@@ -13,8 +13,14 @@ class Api::V1::ItemsController < ApplicationController
     end
 
     def update
-        Item.find(params[:id]).update(item_params)
-        head :no_content
+        item = Item.find(params["id"])
+        item.update(item_params)
+
+        if item.save
+            render json: ItemSerializer.new(item)
+        else
+            render status: 404
+        end 
     end 
 
     def destroy
@@ -25,6 +31,6 @@ class Api::V1::ItemsController < ApplicationController
     private
 
     def item_params
-        params.permit(:name, :description, :unit_price)
+        params.permit(:name, :description, :unit_price, :merchant_id)
     end 
 end
