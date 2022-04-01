@@ -170,7 +170,7 @@ GET `:3000/api/v1/merchants/find?name={{name_fragment}}`
 
 GET `:3000/api/v1/items/find_all?name={{name_fragment}}`
 ## 👽 About Me
-Despite having the habit of speedrunning my projects for absolutely zero reason, I am, surprisingly, a _relatively_ competent Rails developed (relative because the truth is, there's just going to be so much more to learn at any given point in time that I'm happy to admit I'll never be able to know it all). Rails Engine is a demonstration of API Endpoint creation and their tests for functionality, both through provided Postman tests and handrolled request spec tests.
+Despite having the habit of speedrunning my projects for absolutely zero reason, I am, surprisingly, a _relatively_ competent Rails developer. Rails Engine is a demonstration of API Endpoint creation and their tests for functionality, both through provided Postman tests and handrolled request spec tests.
 
 Also, here's this photo of an orange (it is also my profile photo for GitHub).
 
