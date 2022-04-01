@@ -10,19 +10,19 @@ RSpec.describe 'Merchant Search API' do
 
         it 'returns all possibly valid queries' do
             expect(json).to_not be_empty
-            expect(json["data"]["attributes"["name"]]).to eq(merchant_name_f)
+            expect(json["data"]["attributes"]["name"]).to eq(merchant_name_f)
         end 
 
         it 'returns status code 200' do
-            expect(response).to have_http_status(204)
+            expect(response).to have_http_status(200)
         end
     end 
 
     context 'no valid search query is found' do
-        before { get "/api/v1/merchants/find?name=Hubert" }
+        before { get "/api/v1/merchants/find?name=asdgfasgasdgasdg" }
 
         it 'returns status code 200' do
-            expect(json).to be_empty
+            expect(response.body).to match (/No Merchants Found/)
             expect(response).to have_http_status(200)
         end 
     end 
