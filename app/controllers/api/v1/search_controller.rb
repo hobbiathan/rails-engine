@@ -8,4 +8,14 @@ class Api::V1::SearchController < ApplicationController
             render json: MerchantSerializer.new(merchant)
         end
     end 
+
+    def find_all
+        items = Item.where('name ILIKE ?', "%#{params[:name]}%")
+
+        if items.nil?
+            render json: { data: { message: "No Items Found" } }, status: 200
+        else
+            render json: ItemSerializer.new(items)
+        end 
+    end 
 end 
