@@ -148,6 +148,8 @@ X-Runtime: 0.006172
 All subsequent calls to either get or create information will result in a similar JSON structured response.
 ## API Call Examples
 
+The following is a list of all endpoints available within the Rails Engine project (albeit, the direct call structuring and documentation doesn't exist, so these are arguably next to useless in assisting you actually call the API).
+
 GET `:3000/api/v1/merchants`
 
 GET `:3000/api/v1/merchants/{{merchant_id}}`
@@ -167,8 +169,9 @@ GET `:3000/api/v1/items/{{item_id}}/merchant`
 GET `:3000/api/v1/merchants/find?name={{name_fragment}}`
 
 GET `:3000/api/v1/items/find_all?name={{name_fragment}}`
-## 🚀 About Me
-Despite having the habit of speedrunning my projects for absolutely zero reason, I am, surprisingly, a _relatively_ competent Rails developed (relative because the truth is, there's just going to be so much more to learn at any given point in time that I'm happy to admit I'll never be able to know it all). Rails Engine is a demonstration of my ability to create API Endpoints and test for their functionality both through provided Postman tests and handrolled request spec tests.
+## 👽 About Me
+Despite having the habit of speedrunning my projects for absolutely zero reason, I am, surprisingly, a _relatively_ competent Rails developed (relative because the truth is, there's just going to be so much more to learn at any given point in time that I'm happy to admit I'll never be able to know it all). Rails Engine is a demonstration of API Endpoint creation and their tests for functionality, both through provided Postman tests and handrolled request spec tests.
 
-Anywho, here's this photo of an orange (it is also my profile photo for GitHub).
+Also, here's this photo of an orange (it is also my profile photo for GitHub).
 
+![orange](https://user-images.githubusercontent.com/77761679/161328462-51628f52-9e20-4cef-8879-522cb88bbf41.jpg)
